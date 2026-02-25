@@ -1,0 +1,105 @@
+.projects-page {
+  padding: 24px;
+  width: 100%;
+}
+
+.projects-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.projects-header h1 {
+  margin-bottom: 4px;
+}
+
+.new-project-btn {
+  background: #6d28d9;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+/* Project Card */
+.project-card {
+  background: white;
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-icon {
+  cursor: pointer;
+}
+
+.status {
+  display: inline-block;
+  margin: 10px 0;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  background: #e0e7ff;
+  color: #4338ca;
+}
+
+.description {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 16px;
+}
+
+.progress-section {
+  margin-bottom: 14px;
+}
+
+.progress-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+.progress-bar {
+  height: 6px;
+  background: #e5e7eb;
+  border-radius: 6px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #6d28d9;
+  border-radius: 6px;
+}
+
+.card-footer {
+  font-size: 13px;
+  color: #555;
+}
+
+.projects-grid{
+
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .projects-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}

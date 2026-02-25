@@ -1,16 +1,20 @@
 /* SIDEBAR */
 
-.side-bar{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 10px;
-    background-color: black;
-    width: 300px;
-    height: 100vh;
-    padding: 20px;    
+.side-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  background-color: black;
+  width: 300px;
+  min-height: 100vh;
+  height: auto;
+  padding: 20px;
+  overflow-y: auto;
 }
+
+/* LOGO */
 
 .logo {
   font-weight: 700;
@@ -25,31 +29,37 @@
   border-radius: 8px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   gap: 4px;
   padding: 8px;
 }
 
 .logo-grid span {
-  border: 3px #ffffff solid;
+  border: 3px solid #ffffff;
   background: #7b5cff;
   border-radius: 4px;
 }
 
-.grid-one{
-    grid-row: span 2;
-
+.grid-one {
+  grid-row: span 2;
 }
 
-.grid-three{
-    grid-row: span 2;
+.grid-three {
+  grid-row: span 2;
 }
 
-.taskflow{
+/* TASKFLOW HEADER */
+
+.taskflow {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+  gap: 20px;
 }
+
+/* MENU */
 
 .menu-child {
   display: block;
@@ -61,15 +71,17 @@
   cursor: pointer;
 }
 
+.menu-child:hover {
+  background: #7c3aed;
+  color: white;
+}
+
 .menu-child.active {
   background: #7c3aed;
   color: white;
 }
 
-.menu a:hover{
-    background: #7c3aed;
-    color: white;
-}
+/* PROFILE */
 
 .profile {
   display: flex;
@@ -78,6 +90,8 @@
 }
 
 .profile img {
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
 }
 
@@ -86,11 +100,17 @@
   color: #6b7280;
 }
 
-.name{
-    color: white;
+.name {
+  color: white;
 }
 
-/* MAIN */
+
+
+
+
+
+
+/* Home */
 .main {
   flex: 1;
   padding: 20px 30px;
@@ -104,7 +124,7 @@
 }
 
 .topbar input {
-  width: 300px;
+  width: 80%;
   padding: 10px 14px;
   border-radius: 12px;
   border: none;
@@ -115,6 +135,10 @@
   display: flex;
   align-items: center;
   gap: 14px;
+}
+
+.top-icons img{
+  border-radius: 50%;
 }
 
 /* CONTENT */
@@ -132,12 +156,24 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 16px;
+  margin-top: 50px;
 }
 
 .card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background: white;
-  padding: 20px;
+  padding: 20px 30px;
   border-radius: 16px;
+  box-shadow: 5px 5px 5px gray;
+}
+
+.card-flex{
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  margin-top: 40px;
 }
 
 .up {

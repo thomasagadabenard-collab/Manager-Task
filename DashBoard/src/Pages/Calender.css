@@ -1,0 +1,121 @@
+.calendar-page {
+  padding: 24px;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.add-event-btn {
+  background: #6d28d9;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.calendar-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+}
+
+/* Calendar Card */
+.calendar-card {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.calendar-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.nav-buttons button {
+  background: #f3f4f6;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.days-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+}
+
+.day-cell {
+  height: 80px;
+  border-radius: 12px;
+  background: #f9fafb;
+  padding: 8px;
+  font-size: 14px;
+}
+
+/* Upcoming Tasks */
+.upcoming-card {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.task-item h4 {
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.task-item p {
+  font-size: 12px;
+  color: #666;
+}
+
+.badge {
+  font-size: 11px;
+  padding: 4px 8px;
+  border-radius: 12px;
+}
+
+.high {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.medium {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.in-progress {
+  background: #e0e7ff;
+  color: #3730a3;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .calendar-layout {
+    grid-template-columns: 1fr;
+  }
+}
