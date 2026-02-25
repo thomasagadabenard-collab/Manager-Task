@@ -1,0 +1,188 @@
+/* SIDEBAR */
+
+.side-bar{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    background-color: black;
+    width: 300px;
+    height: 100vh;
+    padding: 20px;    
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 20px;
+  color: #7c3aed;
+}
+
+.logo-grid {
+  width: 44px;
+  height: 44px;
+  background: #7b5cff;
+  border-radius: 8px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4px;
+  padding: 8px;
+}
+
+.logo-grid span {
+  border: 3px #ffffff solid;
+  background: #7b5cff;
+  border-radius: 4px;
+}
+
+.grid-one{
+    grid-row: span 2;
+
+}
+
+.grid-three{
+    grid-row: span 2;
+}
+
+.taskflow{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-child {
+  display: block;
+  padding: 12px;
+  margin: 6px 0;
+  border-radius: 10px;
+  color: #6b7280;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.menu-child.active {
+  background: #7c3aed;
+  color: white;
+}
+
+.menu a:hover{
+    background: #7c3aed;
+    color: white;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.profile img {
+  border-radius: 50%;
+}
+
+.profile span {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.name{
+    color: white;
+}
+
+/* MAIN */
+.main {
+  flex: 1;
+  padding: 20px 30px;
+}
+
+/* TOPBAR */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.topbar input {
+  width: 300px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: none;
+  background: #e5f3f1;
+}
+
+.top-icons {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* CONTENT */
+.content h1 {
+  margin-top: 20px;
+}
+
+.subtitle {
+  color: #6b7280;
+  margin-bottom: 20px;
+}
+
+/* STATS */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 16px;
+}
+
+.up {
+  color: #22c55e;
+}
+
+.down {
+  color: #ef4444;
+}
+
+/* GRID */
+.grid {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.box {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  min-height: 180px;
+}
+
+.box.large {
+  grid-column: span 2;
+}
+
+/* PROGRESS */
+.progress p {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.bar {
+  background: #e5e7eb;
+  height: 8px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.bar span {
+  display: block;
+  height: 100%;
+  background: #7c3aed;
+}
