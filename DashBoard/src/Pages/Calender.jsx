@@ -1,9 +1,11 @@
-import { useState } from "react";
-import "./Calendar.css";
+import { useState, useEffect } from "react";
+import './Calender.css'
 
 const Calendar = () => {
   const [currentDate, setCurrentDate] = useState(new Date());
+  const [tasks, setTasks] = useState([]);
 
+  /* ---------------- Date Info ---------------- */
   const year = currentDate.getFullYear();
   const month = currentDate.getMonth();
 
@@ -14,22 +16,48 @@ const Calendar = () => {
     month: "long",
   });
 
-  const prevMonth = () => {
+  /* ---------------- Month Navigation ---------------- */
+  const prevMonth = () =>
     setCurrentDate(new Date(year, month - 1, 1));
-  };
 
-  const nextMonth = () => {
+  const nextMonth = () =>
     setCurrentDate(new Date(year, month + 1, 1));
-  };
 
+  /* ---------------- Calendar Days ---------------- */
   const days = [];
-  for (let i = 0; i < firstDayOfMonth; i++) {
-    days.push(null);
-  }
-  for (let i = 1; i <= daysInMonth; i++) {
-    days.push(i);
-  }
+  for (let i = 0; i < firstDayOfMonth; i++) days.push(null);
+  for (let i = 1; i <= daysInMonth; i++) days.push(i);
 
+  /* ---------------- Load Tasks ---------------- */
+  useEffect(() => {
+    const savedTasks = localStorage.getItem("tasks");
+    if (savedTasks) {
+      setTasks(JSON.parse(savedTasks));
+    }
+  }, []);
+
+  /* ---------------- Helpers ---------------- */
+  const tasksForDay = (day) =>
+    tasks.filter((task) => {
+      if (!task.dueDate) return false;
+
+      const taskDate = new Date(task.dueDate);
+      return (
+        taskDate.getDate() === day &&
+        taskDate.getMonth() === month &&
+        taskDate.getFullYear() === year
+      );
+    });
+
+  const upcomingTasks = tasks
+    .filter((task) => task.dueDate)
+    .sort(
+      (a, b) =>
+        new Date(a.dueDate) - new Date(b.dueDate)
+    )
+    .slice(0, 3);
+
+  /* ---------------- UI ---------------- */
   return (
     <div className="calendar-page">
       {/* Header */}
@@ -38,7 +66,6 @@ const Calendar = () => {
           <h1>Calendar</h1>
           <p>View and manage your tasks and deadlines</p>
         </div>
-        <button className="add-event-btn">+ Add Event</button>
       </div>
 
       <div className="calendar-layout">
@@ -55,15 +82,30 @@ const Calendar = () => {
           </div>
 
           <div className="weekdays">
-            {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map((day) => (
-              <span key={day}>{day}</span>
-            ))}
+            {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map(
+              (day) => (
+                <span key={day}>{day}</span>
+              )
+            )}
           </div>
 
           <div className="days-grid">
             {days.map((day, index) => (
               <div key={index} className="day-cell">
-                {day && <span>{day}</span>}
+                {day && (
+                  <>
+                    <span className="day-number">{day}</span>
+
+                    {tasksForDay(day).map((task) => (
+                      <div
+                        key={task.id}
+                        className={`event ${task.priority}`}
+                      >
+                        {task.title}
+                      </div>
+                    ))}
+                  </>
+                )}
               </div>
             ))}
           </div>
@@ -73,33 +115,25 @@ const Calendar = () => {
         <div className="upcoming-card">
           <h3>Upcoming Tasks</h3>
 
-          <div className="task-item">
-            <div>
-              <h4>Design homepage mockups</h4>
-              <p>Create high-fidelity mockups for the new homepage</p>
-            </div>
-            <span className="badge high">high</span>
-          </div>
+          {upcomingTasks.length === 0 && (
+            <p>No upcoming tasks</p>
+          )}
 
-          <div className="task-item">
-            <div>
-              <h4>Implement responsive navigation</h4>
-              <p>Build mobile-responsive navigation component</p>
+          {upcomingTasks.map((task) => (
+            <div key={task.id} className="task-item">
+              <div>
+                <h4>{task.title}</h4>
+                <p>{task.project}</p>
+              </div>
+              <span className={`badge ${task.priority}`}>
+                {task.priority}
+              </span>
             </div>
-            <span className="badge in-progress">in progress</span>
-          </div>
-
-          <div className="task-item">
-            <div>
-              <h4>Set up CI/CD pipeline</h4>
-              <p>Configure automated testing and deployment</p>
-            </div>
-            <span className="badge medium">medium</span>
-          </div>
+          ))}
         </div>
       </div>
     </div>
   );
 };
 
-export default Calendar; 
+export default Calendar;

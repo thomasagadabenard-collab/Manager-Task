@@ -7,6 +7,6 @@
 
 .flex{
   display: flex;
-  gap: 2rem;
+  gap: 0;
 }
 

@@ -1,11 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../Components/NavBar.css'
+import { useProjects } from '../Context/Projectscontext';
 
 const Home = () => {
+  const [dark, setDark] = useState(false);
+  const { projects } = useProjects();
+
+  const isDark = () => {
+    setDark(prev => !prev)
+  };
+
   return (
     <>
     {/* MAIN */}
-      <main className="main">
+      <main className={dark? "dark": "main"}>
         {/* TOP BAR */}
         <header className="topbar">
           <input
@@ -14,7 +22,7 @@ const Home = () => {
             className="topbar-input"
           />
           <div className="top-icons">
-            <span>🌙</span>
+            <span onClick={isDark} className='theme'>{dark ? "☀️" : "🌙"}</span>
             <span>🔔</span>
             <img src="https://i.pravatar.cc/36" alt="avatar" />
           </div>
@@ -31,7 +39,7 @@ const Home = () => {
             <div className="card">
               <p>Total Projects</p>
               <div className='card-flex'>
-                <h2>6</h2>
+                <h2>{projects.length}</h2>
                 <span className="up">+12%</span>
               </div>
             </div>
@@ -47,13 +55,6 @@ const Home = () => {
               <div className='card-flex'>
                 <h2>2</h2>
                 <span className="up">+18%</span>
-              </div>
-            </div>
-            <div className="card">
-              <p>Overdue</p>
-              <div className='card-flex'>
-                <h2>3</h2>
-                <span className="down">-8%</span>
               </div>
             </div>
           </div>

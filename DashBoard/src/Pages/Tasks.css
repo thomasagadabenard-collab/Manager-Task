@@ -1,0 +1,165 @@
+.tasks-page {
+  padding: 24px;
+}
+
+/* Header */
+.tasks-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+
+
+/* Filters */
+.tasks-filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.tasks-filters button {
+  padding: 6px 12px;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+  background: white;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.tasks-filters .active {
+  background: #ede9fe;
+  border-color: #6d28d9;
+  color: #6d28d9;
+}
+
+/* Task List */
+.tasks-list {
+  background: white;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.task-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr auto;
+  align-items: center;
+  padding: 14px 16px;
+  border-bottom: 1px solid #f1f1f1;
+  gap: 10px;
+}
+
+.task-row:last-child {
+  border-bottom: none;
+}
+
+.task-main h4 {
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.project {
+  font-size: 12px;
+  color: #666;
+}
+
+.menu-icon {
+  cursor: pointer;
+}
+
+/* Badges */
+.badge {
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 12px;
+  width: fit-content;
+}
+
+.status.todo {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.status.in-progress {
+  background: #e0e7ff;
+  color: #3730a3;
+}
+
+.status.done {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.priority.high {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.priority.medium {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+
+.task-form {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr auto;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.task-form input,
+.task-form select {
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.task-form button {
+  background: #6d28d9;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.actions{
+    display: flex;
+    gap: 8px;
+}
+
+.actions button{
+    padding: 4px 8px;
+    background: #6d28d9;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.15s ease-in-out;
+}
+
+.actions button:hover{
+    opacity: 0.8;
+}
+.actions button:active{
+    opacity: 0.4;
+}
+
+@media (max-width: 900px) {
+  .task-form {
+    grid-template-columns: 1fr;
+  }
+  .task-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .due-date {
+    font-size: 12px;
+    color: #666;
+  }
+}

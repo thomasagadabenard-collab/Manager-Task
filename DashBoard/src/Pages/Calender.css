@@ -22,7 +22,7 @@
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 20px;
-}
+} 
 
 /* Calendar Card */
 .calendar-card {
@@ -75,6 +75,14 @@
   padding: 20px;
 }
 
+.upcoming-card h3{
+  background-color: #6d28d9;
+  padding: 10px;
+  color: white;
+  margin-bottom: 20px;
+  border-radius: 15px;
+}
+
 .task-item {
   display: flex;
   justify-content: space-between;
@@ -111,6 +119,53 @@
 .in-progress {
   background: #e0e7ff;
   color: #3730a3;
+}
+
+.calendar-form {
+  display: grid;
+  grid-template-columns: 2fr 3fr 1fr 1fr auto;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.calendar-form input,
+.calendar-form select {
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.calendar-form button {
+  background: #6d28d9;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.event {
+  margin-top: 4px;
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-size: 11px;
+  background: #ede9fe;
+}
+
+.event.high {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.event.medium {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+@media (max-width: 900px) {
+  .calendar-form {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Responsive */

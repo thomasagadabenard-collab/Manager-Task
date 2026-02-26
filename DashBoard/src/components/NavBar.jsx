@@ -20,7 +20,7 @@ const NavBar = () => {
           <Link to="/" className='menu-child active' > Dashboard </Link>
           <Link to="/projects" className='menu-child'>Projects</Link>
           <Link to="/tasks" className='menu-child'>Tasks</Link>
-          <Link to="/calendar" className='menu-child'>Calendar</Link>
+          <Link to = "/Calender" className='menu-child'>Calender</Link>
           <Link to="/team" className='menu-child'>Team</Link>
           <Link to="/settings" className='menu-child'>Settings</Link>
         </nav>
@@ -28,7 +28,7 @@ const NavBar = () => {
         <div className="profile">
           <img src="https://i.pravatar.cc/40" alt="user" />
           <div>
-            <p className="name">Sarah Johnson</p>
+            <p className="name">Thomas Benard</p>
             <span>Product Manager</span>
           </div>
         </div>
