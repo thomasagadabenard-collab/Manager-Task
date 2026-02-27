@@ -1,0 +1,150 @@
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #7b5cff, #8f4bff);
+}
+
+.login-card {
+  background: #ffffff;
+  width: 420px;
+  padding: 40px 35px;
+  margin: 20px auto;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.logo-grid {
+  width: 54px;
+  height: 54px;
+  background: #7b5cff;
+  border-radius: 8px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4px;
+  padding: 8px;
+}
+
+.logo-grid span {
+  border: 3px #ffffff solid;
+  background: #7b5cff;
+  border-radius: 4px;
+}
+
+.grid-one{
+    grid-row: span 2;
+}
+
+.grid-three{
+    grid-row: span 2;
+}
+
+h1 {
+  margin: 10px 0;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.subtitle {
+  color: #6b7280;
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+
+.login-form {
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: none;
+  background: #f3f4f6;
+  font-size: 14px;
+}
+
+.input.error {
+  border: 2px solid red;
+}
+
+.form-group input:focus {
+  outline: 2px solid #7b5cff;
+  background: #ffffff;
+}
+
+.password-wrapper {
+  position: relative;
+}
+
+
+
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  margin: 20px 0;
+  gap: 100px;
+}
+
+.remember {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 2px;
+  border: red 2px solid;
+}
+
+.forgot {
+  color: #7b5cff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.btn {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #7b5cff, #8f4bff);
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.signup-text {
+  margin-top: 22px;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.signup-text a {
+  color: #7b5cff;
+  font-weight: 600;
+  text-decoration: none;
+}

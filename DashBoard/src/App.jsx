@@ -8,6 +8,7 @@ import Tasks from './Pages/Tasks'
 import Team from './Pages/Team'
 import './index.css'
 import Calender from './Pages/Calender'
+import LoginPage from './Pages/LoginPage'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -17,6 +18,8 @@ function App() {
     <>
       
       <BrowserRouter>
+        {<LoginPage /> && 
+        
         <div className='flex'>
           <NavBar />
           <Routes>
@@ -27,7 +30,8 @@ function App() {
             <Route path='/Tasks' element = {<Tasks />}/>
             <Route path='/Team' element = {<Team />}/>
           </Routes>
-        </div>
+        </div>}
+        
       </BrowserRouter>
     </>
   )
